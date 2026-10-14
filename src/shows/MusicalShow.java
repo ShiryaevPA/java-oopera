@@ -1,26 +1,44 @@
 package shows;
 
 import persons.Actor;
+import persons.Director;
+import persons.MusicAuthor;
 
 import java.util.ArrayList;
 
 public class MusicalShow extends Show {
 
-    String musicAuthor;
-    String librettoText;
+    private MusicAuthor musicAuthor;
+    private String librettoText;
 
     public MusicalShow(String title,
-                       String director,
-                       int duration,
+                       Director director,
+                       double duration,
                        ArrayList<Actor> listOfActors,
-                       String musicAuthor,
+                       MusicAuthor musicAuthor,
                        String librettoText) {
         super(title, director, duration, listOfActors);
         this.musicAuthor = musicAuthor;
         this.librettoText = librettoText;
     }
 
-    void printLibrettoText() {
+    public MusicAuthor getMusicAuthor() {
+        return musicAuthor;
+    }
 
+    public void setMusicAuthor(MusicAuthor musicAuthor) {
+        this.musicAuthor = musicAuthor;
+    }
+
+    public String getLibrettoText() {
+        return librettoText;
+    }
+
+    public void setLibrettoText(String librettoText) {
+        this.librettoText = librettoText;
+    }
+
+    public void printLibrettoText() {
+        System.out.println(this.librettoText);
     }
 }
