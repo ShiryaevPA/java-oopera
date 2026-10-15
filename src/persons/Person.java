@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public class Person {
 
-    private String name;
-    private String surname;
-    private Sex gender;
+    private final String name;
+    private final String surname;
+    private final Sex gender;
 
     public Person(String name, String surname, Sex gender) {
         this.name = name;
@@ -20,24 +20,8 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Sex getGender() {
-        return gender;
-    }
-
-    public void setGender(Sex gender) {
-        this.gender = gender;
     }
 
     @Override
@@ -50,15 +34,7 @@ public class Person {
 
     @Override
     public int hashCode() {
-        int hash = 17;
-        if (name != null) {
-            hash = hash + name.hashCode();
-        }
-        hash = hash * 31;
-        if (surname != null) {
-            hash = hash + surname.hashCode();
-        }
-        return hash;
+        return Objects.hash(name, surname);
     }
 
     @Override

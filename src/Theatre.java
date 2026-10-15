@@ -24,7 +24,7 @@ public class Theatre {
 
         //Также создайте одного автора музыки и одного хореографа
         MusicAuthor musicAuthor = new MusicAuthor("Тестун", "Тествойноватый", Sex.MALE);
-        Choreographer choreographer = new Choreographer("Хортест", "Хореогрофатыйтестов", Sex.MALE);
+        Choreographer choreographer = new Choreographer("Хортест", "Хореогрофатыйтестов", Sex.FEMALE);
 
         //Создать три спектакля: обычный, оперный и балет
         Show show = new Show("Простое тестовое шоу",

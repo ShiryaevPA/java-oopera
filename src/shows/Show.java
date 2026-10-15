@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class Show {
 
-    private String title;
-    private Director director;
+    private final String title;
+    private final Director director;
     private double duration;
-    private ArrayList<Actor> listOfActors;
+    private final ArrayList<Actor> listOfActors;
 
     public Show(String title, Director director, double duration, ArrayList<Actor> listOfActors) {
         this.title = title;
@@ -23,37 +23,8 @@ public class Show {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Director getDirector() {
-        return director;
-    }
-
-    public void setDirector(Director director) {
-        this.director = director;
-    }
-
-    public double getDuration() {
-        return duration;
-    }
-
-    public void setDuration(double duration) {
-        this.duration = duration;
-    }
-
-    public ArrayList<Actor> getListOfActors() {
-        return listOfActors;
-    }
-
-    public void setListOfActors(ArrayList<Actor> listOfActors) {
-        this.listOfActors = listOfActors;
-    }
-
-
     public void printListOfActors() {
-        System.out.println("В спектакле '" + this.title + "' участвуют актёры:\nАплодисменты пожалуйста!!!)");
+        System.out.println("В спектакле '" + this.title + "' участвуют актёры:\nАплодисменты пожалуйста!!!");
         for (Actor actor : listOfActors) {
             System.out.println(actor);
         }

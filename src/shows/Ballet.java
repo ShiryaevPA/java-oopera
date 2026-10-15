@@ -22,11 +22,4 @@ public class Ballet extends MusicalShow {
         this.choreographer = choreographer;
     }
 
-    public Choreographer getChoreographer() {
-        return choreographer;
-    }
-
-    public void setChoreographer(Choreographer choreographer) {
-        this.choreographer = choreographer;
-    }
 }
