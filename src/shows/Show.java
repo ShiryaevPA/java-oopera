@@ -53,37 +53,45 @@ public class Show {
 
 
     public void printListOfActors() {
+        System.out.println("В спектакле '" + this.title + "' участвуют актёры:\nАплодисменты пожалуйста!!!)");
         for (Actor actor : listOfActors) {
             System.out.println(actor);
         }
+        System.out.println();
+    }
+
+    public void printDirector() {
+        System.out.println("Встречайте режиссёра спектакля '" + this.title + "':\n" + this.director + "\n");
     }
 
     public void addActor(Actor actor) {
         boolean isOnList = false;
-        for(Actor actorInList : listOfActors) {
-            if(actor.equals(actorInList)) {
+        for (Actor actorInList : listOfActors) {
+            if (actor.equals(actorInList)) {
                 isOnList = true;
                 break;
             }
         }
         if (!isOnList) {
             listOfActors.add(actor);
+            System.out.println("Актёр '" + actor.getName() + "' добавлен в спектакль '" + this.title + "'\n");
         } else {
-            System.out.println("Актёр '" + actor.getName() + "' в этом спектакле '" + this.title  + "' уже участвует");
+            System.out.println("Актёр '" + actor.getName() + "' в этом спектакле '" + this.title + "' уже участвует\n");
         }
     }
 
     public void replacementActor(Actor newActor, String surname) {
         boolean isOnList = false;
-        for(int i = 0; i < listOfActors.size(); i++) {
-            if(surname.equals(listOfActors.get(i).getSurname())) {
+        for (int i = 0; i < listOfActors.size(); i++) {
+            if (surname.equals(listOfActors.get(i).getSurname())) {
                 listOfActors.set(i, newActor);
+                System.out.println("Актёр '" + newActor.getName() + "' сменил актёра '" + surname + "' в спектакле '" + this.title + "'\n");
                 isOnList = true;
                 break;
             }
         }
         if (!isOnList) {
-            System.out.println("Актёр с фамилией '" + surname + "' в этом спектакле '" + this.title + "' не участвует");
+            System.out.println("Актёр с фамилией '" + surname + "' в этом спектакле '" + this.title + "' не участвует\n");
         }
     }
 }

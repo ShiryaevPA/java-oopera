@@ -42,7 +42,7 @@ public class Person {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) return true;
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
         return Objects.equals(name, person.name) && Objects.equals(surname, person.surname);
@@ -50,15 +50,20 @@ public class Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname);
+        int hash = 17;
+        if (name != null) {
+            hash = hash + name.hashCode();
+        }
+        hash = hash * 31;
+        if (surname != null) {
+            hash = hash + surname.hashCode();
+        }
+        return hash;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", gender=" + gender +
-                '}';
+        return "name='" + name + '\'' +
+                ", surname='" + surname + '\'';
     }
 }

@@ -39,6 +39,6 @@ public class MusicalShow extends Show {
     }
 
     public void printLibrettoText() {
-        System.out.println(this.librettoText);
+        System.out.println("Для спектакля '" + getTitle() + "' можете ознакомиться с либретто:\n" + this.librettoText + "\n");
     }
 }

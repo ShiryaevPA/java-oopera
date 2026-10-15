@@ -66,6 +66,8 @@ public class Theatre {
         opera.printListOfActors();
         ballet.printListOfActors();
 
+        ballet.printDirector();
+
         //Замените актёра в одном из спектаклей на актёра из другого спектакля
         // (на вход подаётся объект нового актёра и фамилия того, которого он заменяет) и ещё раз выведите для него список актёров
         opera.replacementActor(actorOne, "Тестововый");

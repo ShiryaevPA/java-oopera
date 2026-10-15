@@ -26,7 +26,7 @@ public class Director extends Person {
     @Override
     public String toString() {
         return "Director{" +
-                "numberOfShows=" + numberOfShows +
-                "} " + super.toString();
+                super.toString() +
+                "} ";
     }
 }
