@@ -4,10 +4,18 @@ import enums.Sex;
 
 public class Director extends Person {
 
-    private final int numberOfShows;
+    private int numberOfShows;
 
     public Director(String name, String surname, Sex gender, int numberOfShows) {
         super(name, surname, gender);
+        this.numberOfShows = numberOfShows;
+    }
+
+    public int getNumberOfShows() {
+        return numberOfShows;
+    }
+
+    public void setNumberOfShows(int numberOfShows) {
         this.numberOfShows = numberOfShows;
     }
 

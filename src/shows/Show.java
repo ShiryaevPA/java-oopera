@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Show {
 
-    private final String title;
-    private final Director director;
+    private String title;
+    private Director director;
     private double duration;
     private final ArrayList<Actor> listOfActors;
 
@@ -21,6 +21,26 @@ public class Show {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+
+    public void setDuration(double duration) {
+        this.duration = duration;
     }
 
     public void printListOfActors() {
@@ -52,17 +72,26 @@ public class Show {
     }
 
     public void replacementActor(Actor newActor, String surname) {
-        boolean isOnList = false;
+        int count = 0;
+        int index = -1;
+
         for (int i = 0; i < listOfActors.size(); i++) {
             if (surname.equals(listOfActors.get(i).getSurname())) {
-                listOfActors.set(i, newActor);
-                System.out.println("Актёр '" + newActor.getName() + "' сменил актёра '" + surname + "' в спектакле '" + this.title + "'\n");
-                isOnList = true;
+                count++;
+                index = i;
+            }
+            if(count > 1) {
                 break;
             }
         }
-        if (!isOnList) {
+
+        if (count == 0) {
             System.out.println("Актёр с фамилией '" + surname + "' в этом спектакле '" + this.title + "' не участвует\n");
+        } else if (count == 1) {
+            listOfActors.set(index, newActor);
+            System.out.println("Актёр '" + newActor.getName() + "' сменил актёра '" + surname + "' в спектакле '" + this.title + "'\n");
+        } else {
+            System.out.println("С фамилией '" + surname + "' в спектакле участвуют несколько актёров, замена по фамилии не возможна\n");
         }
     }
 }
